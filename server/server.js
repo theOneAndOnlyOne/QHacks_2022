@@ -14,25 +14,22 @@ const spotifyApi = new SpotifyWebApi({
 
 /* GET home page. */
 server.get('/', function (req, res, next) {
-    res.send(`hello`);
+    res.send(`home page (will be the react app, I guess, so this route won't render anything.)`);
 });
 
 server.get('/login', (req, res) => {
     const html = spotifyApi.createAuthorizeURL(scopes)
-    // console.log(html)
-    // console.log(`\n==== in /login \n`)
     res.redirect(html + "&show_dialog=true")
 })
 
 server.get('/callback', async (req, res) => {
     const { code } = req.query;
-    // console.log(code)
     try {
         const data = await spotifyApi.authorizationCodeGrant(code)
         const { access_token, refresh_token } = data.body;
         spotifyApi.setAccessToken(access_token);
         spotifyApi.setRefreshToken(refresh_token);
-        res.redirect('http://localhost:3000/');
+        res.redirect('/');
     } catch (err) {
         res.redirect('/#/error/invalid token');
     }
