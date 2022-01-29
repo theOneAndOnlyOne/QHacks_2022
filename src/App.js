@@ -3,8 +3,8 @@ import React, { useState }  from 'react';
 import Spotify from 'react-spotify-embed';
 import { ReactComponent as Hamburger } from './icons/hamburgerMenu.svg';
 import { ReactComponent as About} from './icons/i.svg';
-import { ReactComponent as Diamond } from './icons/diamond.svg';
-import Server from './server.js';
+//import { ReactComponent as Diamond } from './icons/diamond.svg';
+//import Server from './server.js';
 
 import {CSSTransition} from 'react-transition-group';
 
@@ -26,9 +26,14 @@ function App() {
 
 function SpotifyPlugin() {
   return (
-    <div className = "embed">
-      <Spotify link= {spotifySongLink}/>
-      <button>Surprise Me</button>
+    <div className = "background">
+      <div className = "embed">
+        <Spotify link= {spotifySongLink}/>
+      </div>
+      <div>
+          <button className = "surpriseButton">Surprise Me</button>
+        </div>
+      
     </div>
     
   );

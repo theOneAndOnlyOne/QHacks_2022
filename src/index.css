@@ -38,14 +38,19 @@ p {
   color: var(--text-color);
 }
 
-Button{
-  background-color: black;
+button{
+  background-color: var(--bg);
   color: white;
   font-size: 20px;
   padding: 10px 60px;
   border-radius: 5px;
   margin: 10px 0px;
   cursor: pointer;
+  align-self: center;
+}
+
+.background {
+  background-color: var(--bg);
 }
 
 .navbar {
@@ -171,10 +176,27 @@ Button{
   background-color: var(--bg);
   display: flex;
   padding-top: 5rem;
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
   
 }
+.surpriseButton {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-self: center;
+  background-color: var(--bg);
+}
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
