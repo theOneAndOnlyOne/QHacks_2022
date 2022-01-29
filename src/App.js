@@ -3,10 +3,11 @@ import React, { useState }  from 'react';
 import Spotify from 'react-spotify-embed';
 import { ReactComponent as Hamburger } from './icons/hamburgerMenu.svg';
 import { ReactComponent as About} from './icons/i.svg';
+import Form from './Form';
 //import { ReactComponent as Diamond } from './icons/diamond.svg';
-//import Server from './server.js';
 
 import {CSSTransition} from 'react-transition-group';
+
 
 const spotifySongLink = "https://open.spotify.com/track/1EWLulTbAPFXrpj9gLcWFT?si=53ab72bf46c64bc0";
 
@@ -19,6 +20,7 @@ function App() {
         </NavItem>
       </Navbar>
       <SpotifyPlugin></SpotifyPlugin>
+      <Form/>
       </>
       
   );
@@ -30,7 +32,7 @@ function SpotifyPlugin() {
       <div className = "embed">
         <Spotify link= {spotifySongLink}/>
       </div>
-      <div>
+        <div>
           <button className = "surpriseButton">Surprise Me</button>
         </div>
       
