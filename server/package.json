@@ -11,6 +11,11 @@
   "author": "June",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.2"
+    "axios": "^0.25.0",
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "spotify-web-api-node": "^5.0.2",
+    "url": "^0.11.0"
   }
 }
