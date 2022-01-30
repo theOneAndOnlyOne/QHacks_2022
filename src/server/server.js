@@ -1,6 +1,8 @@
 const express = require('express');
 const server = express();
+const cors = require('cors');
 
+server.use(cors());
 const SpotifyWebApi = require('spotify-web-api-node');
 scopes = ['user-read-private', 'user-read-email', 'playlist-modify-public', 'playlist-modify-private']
 
