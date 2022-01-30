@@ -47,6 +47,18 @@ server.get('/playlists', async (req, res) => {
 
 });
 
+server.get('/related', async (req, res) => {
+    const { id } = req.query;
+    try {
+        var result = await spotifyApi.getArtistRelatedArtists(id);
+        console.log(result.body);
+        res.status(200).send(result.body);
+    } catch (err) {
+        res.status(400).send(err)
+    }
+})
+
+
 const port = process.env.PORT || 3001;
 server.listen(port, () => {
     console.log(`watching port ${port}`);
